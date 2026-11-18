@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard · Smart Stock AI</title><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/demo.css"></head>
+<body class="admin-body" data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar"><div class="brand"><div class="brand-logo">SS</div><div><h1>Smart Stock AI</h1><p>Python system</p></div></div><div class="profile-card"><div class="profile-avatar" id="avatar">S</div><div><strong id="profile-name">Loading…</strong><p id="profile-role">Store</p></div></div><nav class="menu"><a class="menu-item active" href="/dashboard.html">Dashboard</a><a class="menu-item" href="/products.html">Product Management</a><a class="menu-item" href="/stock-history.html">Stock History</a><a class="menu-item" href="/sales.html">Sales Transactions</a><a class="menu-item" href="/low-stock.html">Low Stock Alerts</a><a class="menu-item" href="/reports.html">Reports &amp; AI</a><a class="menu-item" href="/users.html">User Management</a></nav></aside>
+    <main class="main-content">
+      <header class="topbar"><div><h2>Dashboard</h2><p id="store-name">Store overview</p></div><button class="btn btn-logout" data-logout>Logout</button></header>
+      <div class="metrics-grid">
+        <article class="metric-card gradient-pink"><p>Weekly sales</p><h2 id="weekly-sales">0</h2><span class="metric-tag">Quantity sold</span></article>
+        <article class="metric-card gradient-blue"><p>Sale lines</p><h2 id="weekly-orders">0</h2><span class="metric-tag">Last 7 days</span></article>
+        <article class="metric-card gradient-green"><p>Products</p><h2 id="products-count">0</h2><span class="metric-tag">In this store</span></article>
+        <article class="metric-card gradient-blue"><p>Units on hand</p><h2 id="stock-units">0</h2><span class="metric-tag">Aggregate stock</span></article>
+      </div>
+      <section class="panel-card"><div class="panel-header"><h3>Sales, last 7 days</h3></div><div id="sales-chart" class="simple-chart"></div></section>
+      <section class="panel-card"><div class="panel-header"><h3>AI inventory monitoring</h3><span class="muted-text" id="model-label">Loading model status…</span></div><div id="ai-table-wrap" class="table-responsive"></div></section>
+      <section class="panel-card"><div class="panel-header"><h3>Ask the inventory assistant</h3><span class="muted-text">Answers are grounded in current store data.</span></div><form id="assistant-form" class="assistant-form"><input id="assistant-question" placeholder="Example: Which product should I check first?" required><button class="btn btn-primary" type="submit">Ask</button></form><p id="assistant-answer" class="assistant-answer" aria-live="polite"></p><details><summary>Data used</summary><pre id="assistant-data"></pre></details></section>
+    </main>
+  </div>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Stock AI · Sign in</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/demo.css">
+</head>
+<body>
+  <div class="page-shell">
+    <section class="hero-panel">
+      <div class="hero-content">
+        <span class="hero-tag">Smart Stock AI</span>
+        <h1>Inventory that helps you decide.</h1>
+        <p>Manage products, complete sales, track stock changes, and review expiry-aware inventory insights.</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <div class="brand-mark">SS</div>
+          <div><strong>Smart Stock AI</strong><div class="muted-text">Python FastAPI demo</div></div>
+        </div>
+        <div class="auth-tabs">
+          <button class="btn btn-secondary" type="button" data-auth-tab="login">Sign in</button>
+          <button class="btn btn-secondary" type="button" data-auth-tab="register">Create account</button>
+        </div>
+        <div id="auth-message" class="notice" aria-live="polite"></div>
+        <form id="login-form">
+          <div class="form-header"><h2>Sign in</h2><p>Access your store dashboard.</p></div>
+          <div class="form-group"><label for="login-email">Email</label><input id="login-email" type="email" required autocomplete="username"></div>
+          <div class="form-group"><label for="login-password">Password</label><input id="login-password" type="password" required autocomplete="current-password"></div>
+          <button class="btn btn-primary full-width" type="submit">Sign in</button>
+        </form>
+        <form id="register-form" hidden>
+          <div class="form-header"><h2>Create account</h2><p>The first account for a store becomes its owner.</p></div>
+          <div class="form-row">
+            <div class="form-group"><label for="first-name">First name</label><input id="first-name" maxlength="50" required></div>
+            <div class="form-group"><label for="last-name">Last name</label><input id="last-name" maxlength="50" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="middle-name">Middle name</label><input id="middle-name" maxlength="50"></div>
+            <div class="form-group"><label for="suffix-name">Suffix</label><input id="suffix-name" maxlength="20" placeholder="Jr., Sr."></div>
+          </div>
+          <div class="form-group"><label for="register-email">Email</label><input id="register-email" type="email" maxlength="100" required autocomplete="username"></div>
+          <div class="form-row">
+            <div class="form-group"><label for="register-password">Password (minimum 6 characters)</label><input id="register-password" type="password" minlength="6" required autocomplete="new-password"></div>
+            <div class="form-group"><label for="confirm-password">Confirm password</label><input id="confirm-password" type="password" minlength="6" required autocomplete="new-password"></div>
+          </div>
+          <div class="form-section">
+            <h3>Location</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="province">Province</label><select id="province" required><option value="">Select province</option></select></div>
+              <div class="form-group"><label for="municipality">Municipality</label><select id="municipality" disabled required><option value="">Select municipality</option></select></div>
+            </div>
+            <div class="form-group"><label for="barangay">Barangay</label><select id="barangay" disabled required><option value="">Select barangay</option></select></div>
+          </div>
+          <div class="form-section">
+            <h3>Store</h3>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="store-option" value="existing" checked> Choose existing store</label>
+              <label class="radio-label"><input type="radio" name="store-option" value="new"> Create a store</label>
+            </div>
+            <div class="form-group" id="existing-store-group"><label for="store-select">Store</label><select id="store-select"><option value="">Select store</option></select></div>
+            <div class="form-group" id="new-store-group" hidden><label for="new-store-name">Store name</label><input id="new-store-name" maxlength="50"></div>
+          </div>
+          <button class="btn btn-primary full-width" type="submit">Create account</button>
+        </form>
+        <p class="muted-text small-note">Use this app on the same computer as the MySQL and Python services.</p>
+      </div>
+    </section>
+  </div>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

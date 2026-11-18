@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Products · Smart Stock AI</title><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/demo.css"></head>
+<body class="admin-body" data-page="products">
+  <div class="app-shell"><aside class="sidebar"><div class="brand"><div class="brand-logo">SS</div><div><h1>Smart Stock AI</h1><p>Python system</p></div></div><div class="profile-card"><div class="profile-avatar" id="avatar">S</div><div><strong id="profile-name">Loading…</strong><p id="profile-role">Store</p></div></div><nav class="menu"><a class="menu-item" href="/dashboard.html">Dashboard</a><a class="menu-item active" href="/products.html">Product Management</a><a class="menu-item" href="/stock-history.html">Stock History</a><a class="menu-item" href="/sales.html">Sales Transactions</a><a class="menu-item" href="/low-stock.html">Low Stock Alerts</a><a class="menu-item" href="/reports.html">Reports &amp; AI</a><a class="menu-item" href="/users.html">User Management</a></nav></aside>
+  <main class="main-content"><header class="topbar"><div><h2>Product Management</h2><p>Add products and record stock changes by delivery batch.</p></div><button class="btn btn-logout" data-logout>Logout</button></header>
+    <p class="notice" id="page-message"></p>
+    <div class="page-grid"><section class="panel-card" id="add-product-panel"><div class="panel-header"><h3>Add product</h3></div><form id="product-form" class="panel-form">
+      <label for="product-name">Product name</label><input id="product-name" maxlength="100" required>
+      <label for="product-barcode">Barcode / SKU</label><input id="product-barcode" maxlength="50" pattern="[A-Za-z0-9_-]{3,50}" required>
+      <div class="form-row"><div><label for="product-category">Category</label><select id="product-category"><option>Food</option><option>Non-Food</option><option>Beverage</option><option>Other</option></select></div><div><label for="product-unit">Unit</label><select id="product-unit"><option>pieces</option><option>grams</option><option>kilograms</option><option>milliliters</option><option>liters</option></select></div></div>
+      <div class="form-row"><div><label for="product-price">Price per unit</label><input id="product-price" type="number" min="0" step="0.01" value="0"></div><div><label for="product-quantity">Starting quantity</label><input id="product-quantity" type="number" min="0" value="0"></div></div>
+      <label for="product-expiry">Initial batch expiry (optional)</label><input id="product-expiry" type="date">
+      <div class="form-row"><div><label for="reorder-level">Reorder level</label><input id="reorder-level" type="number" min="0" value="0"></div><div><label for="lead-time">Supplier lead time (days)</label><input id="lead-time" type="number" min="0" value="0"></div></div>
+      <label for="safety-stock">Safety stock (units)</label><input id="safety-stock" type="number" min="0" value="0">
+      <button class="btn btn-primary" type="submit">Save product</button>
+    </form></section>
+    <section class="panel-card"><div class="panel-header"><h3>Adjust stock / stock-in</h3></div><form id="adjust-form" class="panel-form">
+      <label for="adjust-product">Product</label><select id="adjust-product" required></select>
+      <div class="form-row"><div><label for="adjust-action">Action</label><select id="adjust-action"><option value="increase">Stock-in</option><option value="decrease">Reduce stock</option></select></div><div><label for="adjust-quantity">Quantity</label><input id="adjust-quantity" type="number" min="1" required></div></div>
+      <label for="adjust-expiry">Expiry date for received batch (optional)</label><input id="adjust-expiry" type="date">
+      <label for="adjust-notes">Reason / notes</label><input id="adjust-notes" maxlength="180" placeholder="Supplier delivery, damaged item…">
+      <button class="btn btn-primary" type="submit">Apply stock change</button>
+    </form></section></div>
+    <section class="panel-card"><div class="panel-header"><h3>Products</h3><span id="product-count" class="muted-text"></span></div><div class="table-responsive" id="products-table"></div></section>
+  </main></div><script src="/assets/js/app.js"></script>
+</body></html>

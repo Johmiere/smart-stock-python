@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sales · Smart Stock AI</title><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/demo.css"></head>
+<body class="admin-body" data-page="sales">
+  <div class="app-shell"><aside class="sidebar"><div class="brand"><div class="brand-logo">SS</div><div><h1>Smart Stock AI</h1><p>Python system</p></div></div><div class="profile-card"><div class="profile-avatar" id="avatar">S</div><div><strong id="profile-name">Loading…</strong><p id="profile-role">Store</p></div></div><nav class="menu"><a class="menu-item" href="/dashboard.html">Dashboard</a><a class="menu-item" href="/products.html">Product Management</a><a class="menu-item" href="/stock-history.html">Stock History</a><a class="menu-item active" href="/sales.html">Sales Transactions</a><a class="menu-item" href="/low-stock.html">Low Stock Alerts</a><a class="menu-item" href="/reports.html">Reports &amp; AI</a><a class="menu-item" href="/users.html">User Management</a></nav></aside>
+  <main class="main-content"><header class="topbar"><div><h2>Sales Transactions</h2><p>Scan or type product barcodes, build a cart, then complete checkout.</p></div><button class="btn btn-logout" data-logout>Logout</button></header>
+    <p class="notice" id="page-message"></p><section class="panel-card"><div class="panel-header"><h3>Point of sale</h3></div><div class="panel-form">
+      <label for="sale-barcode">Barcode / SKU</label><input id="sale-barcode" autocomplete="off" autofocus>
+      <p class="muted-text" id="scan-preview">Scan a barcode or type it and press Enter.</p>
+      <div class="form-row"><div><label for="sale-quantity">Quantity</label><input id="sale-quantity" type="number" min="1" value="1"></div><div class="align-end"><button id="add-cart-item" class="btn btn-secondary" type="button">Add to cart</button></div></div>
+    </div><div id="cart-table" class="table-responsive"></div>
+    <div class="checkout-row"><label for="discount-type">Discount type</label><select id="discount-type"><option value="none">None</option><option value="pwd">PWD</option><option value="senior">Senior Citizen</option></select><label for="discount-reference">Non-sensitive note (optional)</label><input id="discount-reference" maxlength="40" placeholder="Do not enter a full ID number"><strong id="cart-total">Total: ₱0.00</strong><button id="complete-sale" class="btn btn-primary" type="button">Complete sale</button></div>
+    <p class="muted-text small-note">Special discount is configurable in backend/.env. Confirm the store's required discount and tax policy before real transactions.</p></section>
+    <section class="panel-card"><div class="panel-header"><h3>Product monitoring</h3><span class="muted-text" id="sales-model-label"></span></div><div class="table-responsive" id="sales-ai-table"></div></section>
+    <section class="panel-card"><div class="panel-header"><h3>Best sellers · last 30 days</h3></div><div class="table-responsive" id="best-sellers"></div></section>
+    <section class="panel-card"><div class="panel-header"><h3>Recent completed sales</h3></div><div class="table-responsive" id="recent-sales"></div></section>
+  </main></div><script src="/assets/js/app.js"></script>
+</body></html>
